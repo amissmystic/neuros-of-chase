@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7cwxjc0cl8c"]
+
+[ext_resource type="PackedScene" uid="uid://deb03q4yaf306" path="res://characters/actor.tscn" id="1_nv8c1"]
+[ext_resource type="SpriteFrames" uid="uid://b1va5y3yanx44" path="res://characters/camila/sprite_frames.tres" id="2_pwwoc"]
+[ext_resource type="SpriteFrames" uid="uid://1m08iogj4evq" path="res://characters/camila/eye_frames.tres" id="3_q2s7w"]
+
+[node name="Actor" instance=ExtResource("1_nv8c1")]
+
+[node name="Outline" parent="." index="0"]
+sprite_frames = ExtResource("2_pwwoc")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = ExtResource("2_pwwoc")
+
+[node name="Eyes" parent="." index="2"]
+sprite_frames = ExtResource("3_q2s7w")

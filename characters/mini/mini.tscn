@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwmler61sne0q"]
+
+[ext_resource type="PackedScene" uid="uid://deb03q4yaf306" path="res://characters/actor.tscn" id="1_y0up5"]
+[ext_resource type="SpriteFrames" uid="uid://bovlkefsnes6q" path="res://characters/mini/sprite_frames.tres" id="2_cdv58"]
+[ext_resource type="SpriteFrames" uid="uid://8hxehlm4wtwr" path="res://characters/mini/eye_frames.tres" id="3_6faw0"]
+[ext_resource type="Texture2D" uid="uid://dwy3y8810jt48" path="res://characters/mini/glasses_mini.png" id="4_e6s30"]
+
+[node name="Minikomew" instance=ExtResource("1_y0up5")]
+interactable = true
+
+[node name="Outline" parent="." index="0"]
+sprite_frames = ExtResource("2_cdv58")
+animation = &"attention"
+autoplay = "attention"
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = ExtResource("2_cdv58")
+animation = &"attention"
+autoplay = "attention"
+
+[node name="Eyes" parent="." index="2"]
+sprite_frames = ExtResource("3_6faw0")
+
+[node name="Glasses" type="Sprite2D" parent="." index="3"]
+texture = ExtResource("4_e6s30")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://gsog7hp50wsq"]
+
+[ext_resource type="PackedScene" uid="uid://cwc5b5jtx6ijx" path="res://items/item.tscn" id="1_0exie"]
+[ext_resource type="Texture2D" uid="uid://chps3jpi7670t" path="res://items/dresser.png" id="2_hlfxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gypos"]
+size = Vector2(27, 25)
+
+[node name="Dresser" instance=ExtResource("1_0exie")]
+
+[node name="Outline" parent="." index="0"]
+texture = ExtResource("2_hlfxp")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_hlfxp")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_gypos")

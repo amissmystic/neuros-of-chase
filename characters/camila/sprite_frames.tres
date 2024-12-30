@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b1va5y3yanx44"]
+
+[ext_resource type="Texture2D" uid="uid://chonvyj56wxcn" path="res://characters/camila/camila.png" id="1_hql7b"]
+[ext_resource type="Texture2D" uid="uid://beojsjot5n0t" path="res://characters/camila/camila2.png" id="2_eujdq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hql7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eujdq")
+}],
+"loop": true,
+"name": &"attention",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hql7b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

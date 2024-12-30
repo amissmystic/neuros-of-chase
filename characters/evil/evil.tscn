@@ -1,0 +1,277 @@
+[gd_scene load_steps=13 format=3 uid="uid://wnddmawsboum"]
+
+[ext_resource type="PackedScene" uid="uid://deb03q4yaf306" path="res://characters/actor.tscn" id="1_gq282"]
+[ext_resource type="Script" path="res://characters/evil/hunter.gd" id="2_kgxcq"]
+[ext_resource type="SpriteFrames" uid="uid://bkb7heqywrbu0" path="res://characters/evil/sprite_frames.tres" id="2_qokiy"]
+[ext_resource type="SpriteFrames" uid="uid://cnustryape6ed" path="res://characters/evil/eye_frames.tres" id="3_fq4sj"]
+[ext_resource type="AudioStream" uid="uid://dr07jenp1qbfq" path="res://sounds/loaded.wav" id="5_5jxgw"]
+[ext_resource type="Texture2D" uid="uid://cqngyxqhowfx5" path="res://characters/evil/harpoon.png" id="5_jvew7"]
+[ext_resource type="AudioStream" uid="uid://bfxn8gtmwrvsw" path="res://sounds/appear.wav" id="5_ytojm"]
+[ext_resource type="Texture2D" uid="uid://bao7xpi1u2w54" path="res://characters/evil/harpoon_gun.png" id="6_kgtyf"]
+[ext_resource type="AudioStream" uid="uid://b6cboq7dyaoxx" path="res://sounds/shot.wav" id="6_yio70"]
+
+[sub_resource type="Animation" id="Animation_1yyyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Harpoon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Harpoon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Harpoon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Harpoon/Projectile:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 7)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Harpoon/Projectile:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Harpoon/Gun:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Harpoon/Gun:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Harpoon:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6iy0u"]
+resource_name = "shoot"
+length = 1.85
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Harpoon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.3, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0944, 2.0944, 0.0, -0.0598298, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Harpoon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Harpoon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.3, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, 0), Vector2(-10, 0), Vector2(0, 0), Vector2(-1, -1), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Harpoon/Projectile:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.8, 1.85, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 7), Vector2(10, 7), Vector2(10, 7), Vector2(100, 7), Vector2(130, 7)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Harpoon/Projectile:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.85, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Harpoon/Gun:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.8, 1.85, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(-2, -2), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Harpoon/Gun:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 1.8, 1.85, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, -0.20944, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Harpoon:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Harpoon/AudioStreamPlayer2D")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_ytojm")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_5jxgw")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_yio70")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_5jxgw")
+}],
+"times": PackedFloat32Array(0, 0.9, 1.75, 1.95)
+}
+tracks/8/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vepdy"]
+_data = {
+"RESET": SubResource("Animation_1yyyn"),
+"shoot": SubResource("Animation_6iy0u")
+}
+
+[node name="Evil" node_paths=PackedStringArray("harpoon_animator") instance=ExtResource("1_gq282")]
+script = ExtResource("2_kgxcq")
+store_turn = 0
+spawn_location = Vector2i(0, 0)
+harpoon_animator = NodePath("HarpoonAnimation")
+
+[node name="Outline" parent="." index="0"]
+sprite_frames = ExtResource("2_qokiy")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = ExtResource("2_qokiy")
+
+[node name="Eyes" parent="." index="2"]
+sprite_frames = ExtResource("3_fq4sj")
+
+[node name="HarpoonAnimation" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_vepdy")
+}
+
+[node name="Harpoon" type="Node2D" parent="." index="5"]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Harpoon" index="0"]
+bus = &"SFX"
+
+[node name="Projectile" type="Sprite2D" parent="Harpoon" index="1"]
+position = Vector2(10, 7)
+texture = ExtResource("5_jvew7")
+
+[node name="Gun" type="Sprite2D" parent="Harpoon" index="2"]
+texture = ExtResource("6_kgtyf")

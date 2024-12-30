@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cyg55ekmawiyh"]
+
+[ext_resource type="Texture2D" uid="uid://2ftyis742fd4" path="res://characters/remnant/remnant.png" id="1_v2oe0"]
+[ext_resource type="Texture2D" uid="uid://dgl4py77j54gs" path="res://characters/remnant/remnant2.png" id="2_37hn0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v2oe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_37hn0")
+}],
+"loop": true,
+"name": &"attention",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v2oe0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

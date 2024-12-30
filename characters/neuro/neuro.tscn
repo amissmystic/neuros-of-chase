@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddkjb7nre3cdp"]
+
+[ext_resource type="PackedScene" uid="uid://deb03q4yaf306" path="res://characters/actor.tscn" id="1_iv8yt"]
+[ext_resource type="Script" path="res://characters/neuro/player.gd" id="2_l37ri"]
+[ext_resource type="SpriteFrames" uid="uid://bwglp46vwuw84" path="res://characters/neuro/sprite_frames.tres" id="3_568a0"]
+[ext_resource type="SpriteFrames" uid="uid://cac8dhbsu6g2s" path="res://characters/neuro/eye_frames.tres" id="4_1ufmh"]
+
+[node name="Neuro" instance=ExtResource("1_iv8yt")]
+script = ExtResource("2_l37ri")
+
+[node name="Outline" parent="." index="0"]
+sprite_frames = ExtResource("3_568a0")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = ExtResource("3_568a0")
+
+[node name="Eyes" parent="." index="2"]
+sprite_frames = ExtResource("4_1ufmh")

@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bkb7heqywrbu0"]
+
+[ext_resource type="Texture2D" uid="uid://dfxi685qoejic" path="res://characters/evil/evil.png" id="1_j0fm0"]
+[ext_resource type="Texture2D" uid="uid://3j3wje8comao" path="res://characters/evil/evil2.png" id="2_0dnuc"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j0fm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0dnuc")
+}],
+"loop": true,
+"name": &"attention",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j0fm0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

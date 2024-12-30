@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq51k7uo5gcf7"]
+
+[ext_resource type="AudioStream" uid="uid://ck3jktwww76j8" path="res://sounds/bitlife.ogg" id="1_fiy0p"]
+[ext_resource type="Script" path="res://sounds/audio.gd" id="1_grlbr"]
+
+[node name="Audio" type="Node"]
+script = ExtResource("1_grlbr")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fiy0p")
+autoplay = true
+bus = &"Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="ImpactTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ImpactTimer" to="." method="_on_impact_timeout"]

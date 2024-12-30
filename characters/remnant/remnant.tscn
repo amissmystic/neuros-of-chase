@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cond8g0cwc8as"]
+
+[ext_resource type="PackedScene" uid="uid://deb03q4yaf306" path="res://characters/actor.tscn" id="1_enbun"]
+[ext_resource type="SpriteFrames" uid="uid://cyg55ekmawiyh" path="res://characters/remnant/sprite_frames.tres" id="2_i3cfp"]
+[ext_resource type="Script" path="res://characters/remnant/remnant.gd" id="2_lqgxu"]
+[ext_resource type="SpriteFrames" uid="uid://dgb7551d2nu7c" path="res://characters/remnant/eye_frames.tres" id="3_ejdkq"]
+
+[node name="Remnant" node_paths=PackedStringArray("ghost_timer") instance=ExtResource("1_enbun")]
+script = ExtResource("2_lqgxu")
+ghost_distance = Vector2(16, 16)
+ghost_timer = NodePath("GhostTimer")
+
+[node name="Outline" parent="." index="0"]
+sprite_frames = ExtResource("2_i3cfp")
+
+[node name="Sprite" parent="." index="1"]
+modulate = Color(1, 1, 1, 0.705882)
+sprite_frames = ExtResource("2_i3cfp")
+
+[node name="Eyes" parent="." index="2"]
+modulate = Color(1, 1, 1, 0.705882)
+sprite_frames = ExtResource("3_ejdkq")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+visible = false
+
+[node name="GhostTimer" type="Timer" parent="." index="4"]
+
+[connection signal="timeout" from="GhostTimer" to="." method="ghost"]

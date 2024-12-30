@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bwglp46vwuw84"]
+
+[ext_resource type="Texture2D" uid="uid://bjsbf8vd4y5mh" path="res://characters/neuro/neuro.png" id="1_8gla0"]
+[ext_resource type="Texture2D" uid="uid://bckl5fgm6120x" path="res://characters/neuro/neuro2.png" id="2_rsub0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8gla0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rsub0")
+}],
+"loop": true,
+"name": &"attention",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8gla0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

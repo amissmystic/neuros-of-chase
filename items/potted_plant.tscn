@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3bocsy2nshno"]
+
+[ext_resource type="Texture2D" uid="uid://dh342b3oum3ha" path="res://items/potted_plant.png" id="1_1b3gv"]
+[ext_resource type="PackedScene" uid="uid://cwc5b5jtx6ijx" path="res://items/item.tscn" id="1_6n7dn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_536kk"]
+size = Vector2(9, 29)
+
+[node name="Potted Plant" instance=ExtResource("1_6n7dn")]
+
+[node name="Outline" parent="." index="0"]
+scale = Vector2(1.15, 1.05)
+texture = ExtResource("1_1b3gv")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("1_1b3gv")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_536kk")

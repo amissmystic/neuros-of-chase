@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnjjd53qilpm"]
+
+[ext_resource type="Texture2D" uid="uid://bkn0ppkleskld" path="res://board/borders/bubblegum/atlas.png" id="1_fnnnq"]
+[ext_resource type="Script" path="res://ui/bubble.gd" id="2_g5shs"]
+
+[node name="Bubble" type="NinePatchRect" node_paths=PackedStringArray("label")]
+modulate = Color(0.864675, 0.864675, 0.864675, 1)
+offset_right = 156.0
+offset_bottom = 272.0
+texture = ExtResource("1_fnnnq")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_g5shs")
+label = NodePath("MarginContainer/RichTextLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.517647, 0.223529, 0.364706, 1)
+bbcode_enabled = true
+text = "You have [b]3 actions[/b] before Evil's first hunt. When you are in the same room as Evil, you will die. Time will rewind to when the hunt begins and a remnant will repeat the moves of your previous life. Evil will chase the remnant while you avoid her and find Vedal! Talk to NPCs or your dead remnants for clues. Good luck!"
+tab_size = 2

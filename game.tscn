@@ -1,0 +1,385 @@
+[gd_scene load_steps=20 format=3 uid="uid://bl23cptd8wxag"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_qtkin"]
+[ext_resource type="PackedScene" uid="uid://bbrkswvf8bbyc" path="res://ui/game_over.tscn" id="2_e4lrp"]
+[ext_resource type="PackedScene" uid="uid://5xfj1nqxmeqv" path="res://board/map.tscn" id="2_hc7wh"]
+[ext_resource type="PackedScene" uid="uid://baalcatwjm1b1" path="res://board/room.tscn" id="2_i7wao"]
+[ext_resource type="PackedScene" uid="uid://wnddmawsboum" path="res://characters/evil/evil.tscn" id="2_snfl0"]
+[ext_resource type="PackedScene" uid="uid://ddkjb7nre3cdp" path="res://characters/neuro/neuro.tscn" id="3_b4ibf"]
+[ext_resource type="PackedScene" uid="uid://ca7cwxjc0cl8c" path="res://characters/camila/camila.tscn" id="4_gdq7n"]
+[ext_resource type="PackedScene" uid="uid://cwmler61sne0q" path="res://characters/mini/mini.tscn" id="5_5v6ig"]
+[ext_resource type="PackedScene" uid="uid://cnjjd53qilpm" path="res://ui/bubble.tscn" id="6_cddor"]
+[ext_resource type="PackedScene" uid="uid://cond8g0cwc8as" path="res://characters/remnant/remnant.tscn" id="7_fbo25"]
+[ext_resource type="FontFile" uid="uid://d4gvs5kmknw2" path="res://ui/peaberry_mono.woff2" id="9_0ewoq"]
+[ext_resource type="Texture2D" uid="uid://l2t2kuqwf5qi" path="res://ui/fullscreen.png" id="10_lux0m"]
+
+[sub_resource type="Animation" id="Animation_5vpig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TipBubble:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(156, 272)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TipBubble:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(317.5, 84)]
+}
+
+[sub_resource type="Animation" id="Animation_p31gh"]
+resource_name = "appear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TipBubble:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(32, 32), Vector2(156, 273)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TipBubble:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(380, 85), Vector2(318, 84)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1bha"]
+_data = {
+"RESET": SubResource("Animation_5vpig"),
+"appear": SubResource("Animation_p31gh")
+}
+
+[sub_resource type="Animation" id="Animation_iw2gr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SpeechBubble:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpeechBubble:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54, 188.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpeechBubble:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.649796, 0.850987, 0.960728, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SpeechBubble/MarginContainer/RichTextLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SpeechBubble:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wj56l"]
+resource_name = "appear"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SpeechBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(142, 196), Vector2(142, 190.5), Vector2(54, 188.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpeechBubble:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(32, 34), Vector2(32, 54), Vector2(428, 60)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpeechBubble:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.65098, 0.85098, 0.960784, 0), Color(0.649796, 0.850987, 0.960728, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SpeechBubble/MarginContainer/RichTextLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SpeechBubble:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2cc36"]
+resource_name = "disappear"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SpeechBubble:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(428, 60), Vector2(32, 54), Vector2(34, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SpeechBubble:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(54, 188.5), Vector2(142, 190.5), Vector2(142, 196)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SpeechBubble:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.649796, 0.850987, 0.960728, 1), Color(0.649796, 0.850987, 0.960728, 1), Color(0.65098, 0.85098, 0.960784, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SpeechBubble:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_duly2"]
+_data = {
+"RESET": SubResource("Animation_iw2gr"),
+"appear": SubResource("Animation_wj56l"),
+"disappear": SubResource("Animation_2cc36")
+}
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("room_map", "rewind_timer", "player", "remnant", "hunter", "tip_animator", "tip_bubble", "speech_animator", "speech_bubble", "score_label")]
+scale = Vector2(2, 2)
+script = ExtResource("1_qtkin")
+game_over_scene = ExtResource("2_e4lrp")
+room_scene = ExtResource("2_i7wao")
+room_map = NodePath("Map")
+rewind_timer = NodePath("RewindTimer")
+player = NodePath("Neuro")
+remnant = NodePath("Remnant")
+hunter = NodePath("Evil")
+tip_animator = NodePath("TipAnimator")
+tip_bubble = NodePath("TipBubble")
+speech_animator = NodePath("SpeechAnimator")
+speech_bubble = NodePath("SpeechBubble")
+score_label = NodePath("Score")
+npc_scenes = Array[PackedScene]([ExtResource("4_gdq7n"), ExtResource("5_5v6ig"), ExtResource("4_gdq7n"), ExtResource("5_5v6ig")])
+
+[node name="RewindTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Map" parent="." instance=ExtResource("2_hc7wh")]
+offset_left = 318.0
+offset_top = 4.0
+offset_right = 474.0
+offset_bottom = 160.0
+scale = Vector2(0.5, 0.5)
+
+[node name="TipBubble" parent="." instance=ExtResource("6_cddor")]
+offset_left = 317.5
+offset_top = 84.0
+offset_right = 473.5
+offset_bottom = 356.0
+scale = Vector2(0.5, 0.5)
+
+[node name="RichTextLabel" parent="TipBubble/MarginContainer" index="0"]
+scroll_active = false
+
+[node name="SpeechBubble" parent="." instance=ExtResource("6_cddor")]
+visible = false
+modulate = Color(0.649796, 0.850987, 0.960728, 1)
+offset_left = 54.0
+offset_top = 188.5
+offset_right = 482.0
+offset_bottom = 248.5
+scale = Vector2(0.5, 0.5)
+
+[node name="MarginContainer" parent="SpeechBubble" index="0"]
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" parent="SpeechBubble/MarginContainer" index="0"]
+text = "[font=res://ui/peaberry_mono.woff2]Minikomew[/font]
+[center]I saw Evil came to this room from the North, without Vedal![/center]"
+scroll_active = false
+
+[node name="TipAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x1bha")
+}
+
+[node name="SpeechAnimator" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TipAnimator")
+libraries = {
+"": SubResource("AnimationLibrary_duly2")
+}
+
+[node name="Neuro" parent="." instance=ExtResource("3_b4ibf")]
+visible = false
+position = Vector2(80, 16)
+last_death = Vector2i(0, 0)
+
+[node name="Remnant" parent="." instance=ExtResource("7_fbo25")]
+visible = false
+position = Vector2(16, 16)
+
+[node name="Evil" parent="." instance=ExtResource("2_snfl0")]
+visible = false
+position = Vector2(48, 16)
+
+[node name="Room" parent="." instance=ExtResource("2_i7wao")]
+position = Vector2(48, 32)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 15.0
+offset_right = 164.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.835294, 0.580392, 0.592157, 1)
+theme_override_fonts/font = ExtResource("9_0ewoq")
+text = "Actions Taken: 0"
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+offset_left = 14.5
+offset_top = 5.0
+offset_right = 184.5
+offset_bottom = 21.0
+scale = Vector2(0.4, 0.4)
+min_value = -40.0
+max_value = 0.0
+value = -10.0
+
+[node name="FullscreenButton" type="TextureButton" parent="."]
+offset_left = 3.5
+offset_top = 3.5
+offset_right = 11.5
+offset_bottom = 11.5
+texture_normal = ExtResource("10_lux0m")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="RewindTimer" to="." method="rewind"]
+[connection signal="animation_finished" from="Evil/HarpoonAnimation" to="." method="kill_confirmed"]
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_changed"]
+[connection signal="pressed" from="FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+
+[editable path="TipBubble"]
+[editable path="SpeechBubble"]
+[editable path="Evil"]

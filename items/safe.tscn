@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b68mo2rkped7y"]
+
+[ext_resource type="PackedScene" uid="uid://cwc5b5jtx6ijx" path="res://items/item.tscn" id="1_oija8"]
+[ext_resource type="Texture2D" uid="uid://beakpaby46h8q" path="res://items/safe.png" id="2_rhpcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxirx"]
+size = Vector2(27, 31)
+
+[node name="Safe" instance=ExtResource("1_oija8")]
+
+[node name="Outline" parent="." index="0"]
+texture = ExtResource("2_rhpcx")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_rhpcx")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_dxirx")

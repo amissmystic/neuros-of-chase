@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://dj46016au43vc"]
+
+[ext_resource type="StyleBox" uid="uid://o8t0mv6qhhdj" path="res://ui/square.stylebox" id="1_aa6bh"]
+[ext_resource type="Script" path="res://board/square.gd" id="2_6bf3h"]
+[ext_resource type="Texture2D" uid="uid://ibxiqevppjwg" path="res://board/tiles/starter/atlas.png" id="2_v8dd0"]
+[ext_resource type="Texture2D" uid="uid://c2uqo7goombes" path="res://characters/neuro/neuro_block.png" id="4_sov5u"]
+[ext_resource type="Texture2D" uid="uid://bc04w1j4t3rm2" path="res://characters/remnant/remnant_block.png" id="5_l8sqi"]
+[ext_resource type="Texture2D" uid="uid://b3mho4jhe4esn" path="res://characters/evil/evil_block.png" id="6_j3734"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i13p0"]
+atlas = ExtResource("2_v8dd0")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2af2"]
+atlas = ExtResource("2_v8dd0")
+region = Rect2(32, 0, 32, 16)
+
+[node name="Square" type="PanelContainer" node_paths=PackedStringArray("floor_rect", "wall_rect", "neuro_block", "remnant_block", "evil_block", "unknown_rect")]
+offset_right = 34.0
+offset_bottom = 36.0
+theme_override_styles/panel = ExtResource("1_aa6bh")
+script = ExtResource("2_6bf3h")
+floor_rect = NodePath("VBox/Floor")
+wall_rect = NodePath("VBox/Wall")
+neuro_block = NodePath("HBox/NeuroBlock")
+remnant_block = NodePath("HBox2/RemnantBlock")
+evil_block = NodePath("HBox2/EvilBlock")
+unknown_rect = NodePath("Unknown")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Wall" type="TextureRect" parent="VBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_i13p0")
+
+[node name="Floor" type="TextureRect" parent="VBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_k2af2")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NeuroBlock" type="TextureRect" parent="HBox"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_sov5u")
+stretch_mode = 5
+
+[node name="Unknown" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.376471, 0.321569, 0.411765, 1)
+
+[node name="Label" type="Label" parent="Unknown"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBox2" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="EvilBlock" type="TextureRect" parent="HBox2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("6_j3734")
+
+[node name="RemnantBlock" type="TextureRect" parent="HBox2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("5_l8sqi")
+stretch_mode = 5

@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://8hxehlm4wtwr"]
+
+[ext_resource type="Texture2D" uid="uid://bfsewxm8l7hva" path="res://characters/mini/eye_mini.png" id="1_7cyet"]
+[ext_resource type="Texture2D" uid="uid://btoyyfei6wjut" path="res://characters/eye_blink.png" id="2_7q1h7"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("1_7cyet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q1h7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

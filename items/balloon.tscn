@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cevufo80gl8rf"]
+
+[ext_resource type="PackedScene" uid="uid://cwc5b5jtx6ijx" path="res://items/item.tscn" id="1_5kpnr"]
+[ext_resource type="Texture2D" uid="uid://e1gubmqdx0ni" path="res://items/balloon.png" id="2_3cvom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilpyq"]
+
+[node name="Balloon" instance=ExtResource("1_5kpnr")]
+
+[node name="Outline" parent="." index="0"]
+texture = ExtResource("2_3cvom")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_3cvom")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_ilpyq")

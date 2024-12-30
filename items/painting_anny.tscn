@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqpml3ebfhbkf"]
+
+[ext_resource type="PackedScene" uid="uid://cwc5b5jtx6ijx" path="res://items/item.tscn" id="1_j0ilk"]
+[ext_resource type="Texture2D" uid="uid://bqi2e8vwt1yjn" path="res://items/painting_anny.png" id="2_pxfyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1dse"]
+size = Vector2(29, 31)
+
+[node name="Painting of Anny" instance=ExtResource("1_j0ilk")]
+hanging = true
+
+[node name="Outline" parent="." index="0"]
+texture = ExtResource("2_pxfyg")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_pxfyg")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_k1dse")

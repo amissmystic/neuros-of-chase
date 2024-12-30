@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://1m08iogj4evq"]
+
+[ext_resource type="Texture2D" uid="uid://bhh7vbiajgsyn" path="res://characters/eye_death.png" id="1_ifr11"]
+[ext_resource type="Texture2D" uid="uid://dlcasrvh6lqfh" path="res://characters/camila/eye_camila.png" id="2_xtfjk"]
+[ext_resource type="Texture2D" uid="uid://btoyyfei6wjut" path="res://characters/eye_blink.png" id="3_86yxt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ifr11")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("2_xtfjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_86yxt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

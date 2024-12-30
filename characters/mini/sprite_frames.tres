@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bovlkefsnes6q"]
+
+[ext_resource type="Texture2D" uid="uid://bvlvj6spwnqft" path="res://characters/mini/mini.png" id="1_ilq6l"]
+[ext_resource type="Texture2D" uid="uid://b32216sk3kpob" path="res://characters/mini/mini2.png" id="2_ohft4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ilq6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ohft4")
+}],
+"loop": true,
+"name": &"attention",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ilq6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

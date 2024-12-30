@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xfj1nqxmeqv"]
+
+[ext_resource type="Script" path="res://board/map.gd" id="1_1igrk"]
+[ext_resource type="PackedScene" uid="uid://dj46016au43vc" path="res://board/square.tscn" id="1_y2xa6"]
+
+[node name="Map" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+script = ExtResource("1_1igrk")
+
+[node name="Square" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square2" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square3" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square4" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square5" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square6" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square7" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square8" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square9" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square10" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square11" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square12" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square13" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square14" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square15" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2
+
+[node name="Square16" parent="." instance=ExtResource("1_y2xa6")]
+layout_mode = 2

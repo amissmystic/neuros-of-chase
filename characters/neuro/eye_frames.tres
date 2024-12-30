@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cac8dhbsu6g2s"]
+
+[ext_resource type="Texture2D" uid="uid://bhh7vbiajgsyn" path="res://characters/eye_death.png" id="1_1lkyt"]
+[ext_resource type="Texture2D" uid="uid://bmpovk7hv7k68" path="res://characters/neuro/eye_neuro.png" id="1_34ed7"]
+[ext_resource type="Texture2D" uid="uid://btoyyfei6wjut" path="res://characters/eye_blink.png" id="2_up8wx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1lkyt")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("1_34ed7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_up8wx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
